@@ -13,6 +13,10 @@ massive(CONNECTION_STRING).then(db => {
     console.log('db connected')
 })
 
+//ENDPOINTS
+app.get('/api/house', ctrl.getAll)
+app.delete('/api/house/:id', ctrl.deleteHouse)
+
 
 
 
