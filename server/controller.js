@@ -18,7 +18,21 @@ module.exports = {
         console.log('deleting house from db',id)
         db.delete_house({id}).then( response => {
             res.status(200).send(response)
-            console.log('deleted that dump')
+            
+        })
+    },
+
+    add: (req,res) => {
+        let db = req.app.get('db');
+        const {name, address, city, state, zipcode} = req.body;
+        db.add_house({name, address, city, state, zipcode}).then(response => {
+            console.log('House Added')
+            res.status(200).send(response);
+        }).catch(err => {
+            res.send(err).status(500)
         })
     }
+
+    
 }
+

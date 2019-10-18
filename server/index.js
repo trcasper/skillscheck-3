@@ -16,6 +16,7 @@ massive(CONNECTION_STRING).then(db => {
 //ENDPOINTS
 app.get('/api/house', ctrl.getAll)
 app.delete('/api/house/:id', ctrl.deleteHouse)
+app.post('/api/house', ctrl.add)
 
 
 
