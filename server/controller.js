@@ -16,7 +16,8 @@ module.exports = {
         let db = req.app.get('db')
         let {id} = req.params
         console.log('deleting house from db',id)
-        db.delete_house({id}).then( response => {
+        db.delete_house(id).then( response => {
+            console.log(response)
             res.status(200).send(response)
             
         })

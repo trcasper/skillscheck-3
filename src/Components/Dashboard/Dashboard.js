@@ -17,13 +17,16 @@ class Dashboard extends Component {
     });
   }
 
-  deleteHouse(id) {
-    axios.delete(`api/house/${id}`).then(res => {
-      this.setState({
-        houses: res.data
-      });
-    });
-  }
+
+    deleteHouse = id => {
+      axios.delete(`/api/house/${id}`).then(res => {
+        console.log(res)
+        this.setState({
+          houses: res.data
+        })
+      })
+    }
+
 
   render() {
     return (
